@@ -1,4 +1,4 @@
-const tasks = ["test1", "test2"];
+let tasks = [];
 
 function addTasks(task, callback) {
   setTimeout(() => {
@@ -16,8 +16,7 @@ function completeTask(i, callback) {
     if (i >= tasks.length || i < 0) {
       callback(new Error("Invalid task index"), null);
     } else {
-      tasks.splice(i, i);
-      console.log(tasks);
+      tasks = tasks.filter((task) => task !== tasks[i]);
       callback(null, "Task completed successfully");
     }
   }, 3500);
@@ -30,7 +29,6 @@ addTasks("mangiare", (error, data) => {
     console.error(error);
   } else {
     console.log(data);
-    // console.log(tasks)
   }
 });
 
