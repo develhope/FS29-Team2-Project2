@@ -17,7 +17,6 @@ function completeTask(i, callback) {
       callback(new Error("Invalid task index"), null);
     } else {
       tasks = tasks.filter((task) => task !== tasks[i]);
-
       callback(null, "Task completed successfully");
     }
   }, 3000);
