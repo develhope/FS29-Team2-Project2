@@ -8,7 +8,7 @@ function addTasks(task, callback) {
     } else {
       callback(new Error("Task must be a non empty string!!"), null);
     }
-  }, 2000);
+  }, 2500);
 }
 
 function completeTask(i, callback) {}
