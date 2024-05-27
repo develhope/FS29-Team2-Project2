@@ -22,7 +22,11 @@ function completeTask(i, callback) {
   }, 3500);
 }
 
-function listTasks() {}
+function listTasks() {
+    setTimeout(() => {
+        return tasks.filter(task => console.log('Task: '+ task + ' , ' + 'Indice: ' + tasks.indexOf(task)));
+    }, 4000);
+}
 
 addTasks("mangiare", (error, data) => {
   if (error) {
@@ -39,3 +43,5 @@ completeTask(0, (error, data) => {
     console.log(data);
   }
 });
+
+listTasks();
